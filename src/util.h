@@ -31,7 +31,7 @@
     print_buf_plain(buf, len); \
 } while(0)
 
-static void print_buf_plain(const unsigned char *buf, size_t len) {
+static SECP256K1_INLINE void print_buf_plain(const unsigned char *buf, size_t len) {
     size_t i;
     printf("{");
     for (i = 0; i < len; i++) {

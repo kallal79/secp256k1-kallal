@@ -31,7 +31,7 @@
 #include "testutil.h"
 #include "util.h"
 
-#if defined(__GNUC__)
+#if defined(__clang__) || (defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)))
 # pragma GCC diagnostic push
 # pragma GCC diagnostic warning "-Wunused-function"
 #endif
@@ -473,6 +473,6 @@ int main(int argc, char** argv) {
     return EXIT_SUCCESS;
 }
 
-#if defined(__GNUC__)
+#if defined(__clang__) || (defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)))
 # pragma GCC diagnostic pop
 #endif

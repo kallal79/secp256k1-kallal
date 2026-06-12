@@ -248,7 +248,7 @@ static void secp256k1_hmac_sha256_finalize(const secp256k1_hash_ctx *hash_ctx, s
     secp256k1_sha256_finalize(hash_ctx, &hash->outer, out32);
 }
 
-static void secp256k1_hmac_sha256_clear(secp256k1_hmac_sha256 *hash) {
+static SECP256K1_INLINE void secp256k1_hmac_sha256_clear(secp256k1_hmac_sha256 *hash) {
     secp256k1_memclear_explicit(hash, sizeof(*hash));
 }
 
